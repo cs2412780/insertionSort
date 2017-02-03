@@ -38,16 +38,13 @@ public class InsertionSort {
 	
 	public static void insertionSortByIteration (int[] array) {
 		for (int i = 0; i < array.length; i++) {
-			for (int j = i; j > 0; j--) {
-				if(array[j] >= array[j-1]) {
-					break;
-				}
-				if(array[j] < array[j-1]) {
-					int temp = array[j];
-					array[j] = array[j-1];
-					array[j-1] = temp;
-				}//end if
-			}//end for
+			int j = i;
+			while((j > 0) && (array[j] < array[j-1])) {
+				int temp = array[j];
+				array[j] = array[j-1];
+				array[j-1] = temp;
+				j--;
+			}//end while
 		}//end for
 	}//end  insertionSortByIteration
 	
